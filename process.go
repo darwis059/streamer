@@ -78,7 +78,7 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"-hls_time",
 		"1",
 		"-hls_list_size",
-		"0", //3
+		"3", //3
 		"-strftime",
 		"1",
 		// "-strftime_mkdir",
