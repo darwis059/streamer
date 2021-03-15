@@ -81,12 +81,13 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"0", //3
 		"-strftime",
 		"1",
-		"-strftime_mkdir",
-		"1",
+		// "-strftime_mkdir",
+		// "1",
 		"-hls_segment_filename",
 		// '%%Y%%m/%%d/%%Y%%m%%d-%%%%d.ts' out.m3u8
 		// fmt.Sprintf("%s/%%Y%%m/%%d/%%Y%%m%%d-%%s.ts", path),
 		fmt.Sprintf("%s/%%Y%%m%%d-%%s.ts", path),
+		// fmt.Sprintf("%s/%%d.ts", path),
 		fmt.Sprintf("%s/index.m3u8", path),
 	)
 	cmd := exec.Command("ffmpeg", processCommands...)
