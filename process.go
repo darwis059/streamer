@@ -85,7 +85,7 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"1",
 		"-hls_segment_filename",
 		// '%%Y%%m/%%d/%%Y%%m%%d-%%%%d.ts' out.m3u8
-		fmt.Sprintf("%s/%%Y%%m/%%d/%%Y%%m%%d-%%%%d.ts", path),
+		fmt.Sprintf("%s/%%Y%%m/%%d/%%Y%%m%%d-%%%%05d.ts", path),
 		fmt.Sprintf("%s/index.m3u8", path),
 	)
 	cmd := exec.Command("ffmpeg", processCommands...)
